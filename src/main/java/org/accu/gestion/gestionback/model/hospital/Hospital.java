@@ -12,12 +12,12 @@ public class Hospital {
     @Field("nombre_hospital")
     private String nombreHospital;
     private String abreviatura;
-    private Medico especialistas;
+    private Medico[] especialistas;
 
     public Hospital() {
     }
 
-    public Hospital(String hospitalId, String nombreHospital, String abreviatura, Medico especialistas) {
+    public Hospital(String hospitalId, String nombreHospital, String abreviatura, Medico[] especialistas) {
         this.hospitalId = hospitalId;
         this.nombreHospital = nombreHospital;
         this.abreviatura = abreviatura;
@@ -48,11 +48,11 @@ public class Hospital {
         this.abreviatura = abreviatura;
     }
 
-    public Medico getEspecialistas() {
+    public Medico[] getEspecialistas() {
         return especialistas;
     }
 
-    public void setEspecialistas(Medico especialistas) {
+    public void setEspecialistas(Medico[] especialistas) {
         this.especialistas = especialistas;
     }
 }

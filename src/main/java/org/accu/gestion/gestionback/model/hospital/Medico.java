@@ -7,7 +7,7 @@ public class Medico {
     public String nombreCompleto;
     public String consulta;
     @Field("tlf_contacto")
-    public String telefono;
+    public String tlfContacto;
     public String email;
     public String especialidad;
 
@@ -17,7 +17,7 @@ public class Medico {
     public Medico(String nombreCompleto, String consulta, String telefono, String email, String especialidad) {
         this.nombreCompleto = nombreCompleto;
         this.consulta = consulta;
-        this.telefono = telefono;
+        this.tlfContacto = telefono;
         this.email = email;
         this.especialidad = especialidad;
     }
@@ -38,12 +38,12 @@ public class Medico {
         this.consulta = consulta;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getTlfContacto() {
+        return tlfContacto;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setTlfContacto(String tlfContacto) {
+        this.tlfContacto = tlfContacto;
     }
 
     public String getEmail() {
