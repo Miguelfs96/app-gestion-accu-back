@@ -1,9 +1,9 @@
 package org.accu.gestion.gestionback.repository;
 
-import org.accu.gestion.gestionback.model.asociado.Asociado;
+import org.accu.gestion.gestionback.model.hospital.Hospital;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AsociadoRepository extends MongoRepository<Asociado, String> {
+public interface HospitalRepository extends MongoRepository<Hospital, String> {
 }

@@ -1,6 +1,6 @@
 package org.accu.gestion.gestionback.service;
 
-import org.accu.gestion.gestionback.model.Asociado;
+import org.accu.gestion.gestionback.model.asociado.Asociado;
 import org.accu.gestion.gestionback.repository.AsociadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

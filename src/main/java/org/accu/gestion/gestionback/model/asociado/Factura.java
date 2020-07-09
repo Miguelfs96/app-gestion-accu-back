@@ -1,4 +1,4 @@
-package org.accu.gestion.gestionback.model;
+package org.accu.gestion.gestionback.model.asociado;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.format.annotation.DateTimeFormat;
