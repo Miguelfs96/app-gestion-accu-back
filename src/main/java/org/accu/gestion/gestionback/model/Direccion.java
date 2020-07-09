@@ -1,5 +1,7 @@
 package org.accu.gestion.gestionback.model;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class Direccion {
     private String calle;
     private String numero;
@@ -8,6 +10,8 @@ public class Direccion {
     private String letra;
     private String localidad;
     private String provincia;
+    @Field("codigo_postal")
+    private String codigoPostal;
     private String pais;
 
     public Direccion(String calle, String numero, String portal, String piso, String letra, String localidad, String provincia, String pais) {
@@ -38,6 +42,14 @@ public class Direccion {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
     }
 
     public String getPortal() {

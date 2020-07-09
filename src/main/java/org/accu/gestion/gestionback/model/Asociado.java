@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Asociado {
 
     @Id
-    private String id;
+    private String asociadoId;
     private String nombre;
     @Field("apellido_1")
     private String apellido1;
@@ -39,12 +39,12 @@ public class Asociado {
     @Field("datos_medicos")
     private DatosMedicos datosMedicos;
 
-    public String getId() {
-        return id;
+    public String getAsociadoId() {
+        return asociadoId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setAsociadoId(String asociadoId) {
+        this.asociadoId = asociadoId;
     }
 
     public String getNombre() {

@@ -6,7 +6,7 @@ public class DatosBancarios {
     @Field("IBAN")
     private String iban;
     private String titular;
-    @Field("modalida_pago")
+    @Field("modalidad_pago")
     private String modalidadPago;
     @Field("direccion_facturacion")
     private Direccion direccionFacturacion;
