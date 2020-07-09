@@ -7,4 +7,6 @@ import java.util.List;
 public interface AsociadoService {
 
     List<Asociado> findAll();
+
+    Asociado findAsociadoById(String asociadoId) throws Exception;
 }

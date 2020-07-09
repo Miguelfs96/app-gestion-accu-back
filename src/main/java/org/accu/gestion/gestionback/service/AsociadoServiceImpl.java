@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AsociadoServiceImpl implements AsociadoService {
@@ -19,4 +20,11 @@ public class AsociadoServiceImpl implements AsociadoService {
 
     @Override
     public List<Asociado> findAll() { return asociadoRepository.findAll(); }
+
+    @Override
+    public Asociado findAsociadoById(String asociadoId) throws Exception {
+        Optional<Asociado> asociado = asociadoRepository.findById(asociadoId);
+        return asociado.orElseThrow(Exception::new);
+
+    }
 }
