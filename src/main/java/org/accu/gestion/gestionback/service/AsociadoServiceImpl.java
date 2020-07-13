@@ -30,7 +30,11 @@ public class AsociadoServiceImpl implements AsociadoService {
 
     @Override
     public Asociado saveAsociado(Asociado asociado) {
-        System.out.println(asociado);
         return asociadoRepository.save(asociado);
     }
+
+//    @Override
+//    public Asociado updateAsociado(Asociado asociado) {
+//        return asociadoRepository.save(asociado);
+//    }
 }

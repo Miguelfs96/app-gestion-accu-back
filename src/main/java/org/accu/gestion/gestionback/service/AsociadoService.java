@@ -11,4 +11,6 @@ public interface AsociadoService {
     Asociado findAsociadoById(String asociadoId) throws Exception;
 
     Asociado saveAsociado(Asociado asociado);
+
+//    Asociado updateAsociado(Asociado asociado);
 }

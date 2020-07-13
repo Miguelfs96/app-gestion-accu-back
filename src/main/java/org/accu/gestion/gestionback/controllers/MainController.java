@@ -6,6 +6,7 @@ import org.accu.gestion.gestionback.service.AsociadoService;
 import org.accu.gestion.gestionback.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,5 +47,12 @@ public class MainController {
     @PostMapping(value = "/asociados/newAsociado")
     public Asociado newAsociado(@RequestBody Asociado asociado){
         return asociadoService.saveAsociado(asociado);
+    }
+
+    @PutMapping("/asociados/{idAsociado}")
+    public ResponseEntity<Asociado> updateAsociado (@PathVariable(value = "idAsociado") String idAsociado,
+                                                    @RequestBody Asociado asociadoDetails){
+        final Asociado asociadoActualizado = asociadoService.saveAsociado(asociadoDetails);
+        return ResponseEntity.ok(asociadoActualizado);
     }
 }
