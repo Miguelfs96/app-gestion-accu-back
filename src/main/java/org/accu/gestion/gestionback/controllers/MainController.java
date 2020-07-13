@@ -42,4 +42,9 @@ public class MainController {
     public Hospital findHospitalById(@PathVariable("idHospital") String idHospital) throws Exception {
         return hospitalService.findHospitalById(idHospital);
     }
+
+    @PostMapping(value = "/asociados/newAsociado")
+    public Asociado newAsociado(@RequestBody Asociado asociado){
+        return asociadoService.saveAsociado(asociado);
+    }
 }

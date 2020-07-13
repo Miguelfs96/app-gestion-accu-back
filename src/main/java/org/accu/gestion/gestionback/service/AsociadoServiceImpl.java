@@ -27,4 +27,10 @@ public class AsociadoServiceImpl implements AsociadoService {
         return asociado.orElseThrow(Exception::new);
 
     }
+
+    @Override
+    public Asociado saveAsociado(Asociado asociado) {
+        System.out.println(asociado);
+        return asociadoRepository.save(asociado);
+    }
 }

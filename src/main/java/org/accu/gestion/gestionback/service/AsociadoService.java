@@ -9,4 +9,6 @@ public interface AsociadoService {
     List<Asociado> findAll();
 
     Asociado findAsociadoById(String asociadoId) throws Exception;
+
+    Asociado saveAsociado(Asociado asociado);
 }
