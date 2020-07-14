@@ -3,6 +3,7 @@ package org.accu.gestion.gestionback.service;
 import org.accu.gestion.gestionback.model.asociado.Asociado;
 
 import java.util.List;
+import java.util.Map;
 
 public interface AsociadoService {
 
@@ -12,5 +13,5 @@ public interface AsociadoService {
 
     Asociado saveAsociado(Asociado asociado);
 
-//    Asociado updateAsociado(Asociado asociado);
+   Map<String, Boolean> deleteAsociado(String idAsociado) throws Exception;
 }

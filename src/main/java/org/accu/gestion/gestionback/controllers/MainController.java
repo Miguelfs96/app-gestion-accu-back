@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -54,5 +55,10 @@ public class MainController {
                                                     @RequestBody Asociado asociadoDetails){
         final Asociado asociadoActualizado = asociadoService.saveAsociado(asociadoDetails);
         return ResponseEntity.ok(asociadoActualizado);
+    }
+
+    @DeleteMapping("/asociados/{idAsociado}/remove")
+    public Map<String, Boolean> deleteAsociado (@PathVariable(value="idAsociado") String idAsociado) throws Exception{
+        return asociadoService.deleteAsociado(idAsociado);
     }
 }
