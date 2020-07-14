@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.accu.gestion</groupId>
     <artifactId>gestion-back</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0-ALPHA</version>
     <name>gestion-back</name>
     <description>Demo project for Spring Boot</description>
 

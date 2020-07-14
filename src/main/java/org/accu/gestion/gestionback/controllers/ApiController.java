@@ -14,35 +14,28 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
-public class MainController {
+@RequestMapping("/accugest/api/v1")
+public class ApiController {
 
     private AsociadoService asociadoService;
     private HospitalService hospitalService;
 
 
     @Autowired
-    public MainController(AsociadoService asociadoService, HospitalService hospitalService) {
+    public ApiController(AsociadoService asociadoService, HospitalService hospitalService) {
         this.asociadoService = asociadoService;
         this.hospitalService = hospitalService;
     }
 
-    @RequestMapping(value = "/asociados", method = RequestMethod.GET)
-    public List<Asociado> findAllAsociados() { return asociadoService.findAll(); }
+    @GetMapping(value = "/asociados")
+    public List<Asociado> findAllAsociados() {
+        return asociadoService.findAll();
+    }
 
 
-    @RequestMapping(value ="/asociado/{idAsociado}")
+    @GetMapping(value ="/asociado/{idAsociado}")
     public Asociado findAsociadoById(@PathVariable("idAsociado") String idAsociado) throws Exception {
         return asociadoService.findAsociadoById(idAsociado);
-    }
-
-    @RequestMapping(value = "/hospitales")
-    public List<Hospital> findAllHospitales() {
-        return hospitalService.findAll();
-    }
-
-    @RequestMapping(value = "/hospital/{idHospital}")
-    public Hospital findHospitalById(@PathVariable("idHospital") String idHospital) throws Exception {
-        return hospitalService.findHospitalById(idHospital);
     }
 
     @PostMapping(value = "/asociados/newAsociado")
@@ -60,5 +53,32 @@ public class MainController {
     @DeleteMapping("/asociados/{idAsociado}/remove")
     public Map<String, Boolean> deleteAsociado (@PathVariable(value="idAsociado") String idAsociado) throws Exception{
         return asociadoService.deleteAsociado(idAsociado);
+    }
+
+    @GetMapping(value = "/hospitales")
+    public List<Hospital> findAllHospitales() {
+        return hospitalService.findAll();
+    }
+
+    @GetMapping(value = "/hospital/{idHospital}")
+    public Hospital findHospitalById(@PathVariable("idHospital") String idHospital) throws Exception {
+        return hospitalService.findHospitalById(idHospital);
+    }
+
+    @PostMapping(value= "/hospitales/newHospital")
+    public Hospital newHospital(@RequestBody Hospital hospital){
+        return hospitalService.saveHospital(hospital);
+    }
+
+    @PutMapping("/hospitales/{idHospital}")
+    public ResponseEntity<Hospital> updateHospital(@PathVariable(value= "idHospital") String idHospital,
+                                                   @RequestBody Hospital hospitalDetails) {
+        final Hospital hospitalActualizado = hospitalService.saveHospital(hospitalDetails);
+        return ResponseEntity.ok(hospitalActualizado);
+    }
+
+    @DeleteMapping("/hospitales/{idHospital}/remove")
+    public Map<String, Boolean> deleteHospital (@PathVariable(value = "idHospital")String idHospital) throws Exception{
+        return hospitalService.deleteHospital(idHospital);
     }
 }
